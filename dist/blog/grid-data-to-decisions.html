@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lessons from turning national-grid records into clear visualizations and inspectable forecasts.">
+  <title>From grid data to useful decisions — Md Mahmud Akon</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css">
+</head>
+<body class="article-page">
+  <header class="site-header article-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">MA</span><span class="brand-copy"><strong>Md Mahmud Akon</strong><small>Research notes</small></span></a>
+    <nav class="primary-nav" aria-label="Article navigation"><a href="../index.html#research">Research</a><a href="../index.html#projects">Projects</a><a href="../index.html#notes">Notes</a></nav>
+    <a class="header-cta" href="../index.html#contact">Let’s connect ↗</a>
+  </header>
+  <main class="article-main">
+    <p class="article-kicker">Data systems · Research note 03</p>
+    <h1>From grid data to useful decisions</h1>
+    <p class="article-deck">A power-data platform becomes valuable when it makes the data lineage, system context, and limits of its forecasts as visible as the charts themselves.</p>
+    <div class="article-byline"><span>By Md Mahmud Akon</span><span>5 min read · October 2026</span></div>
+    <div class="article-body">
+      <p>National-grid data can answer practical questions: How does demand change through the day? Which generation sources respond to peaks? When do recurring patterns break? The first challenge, however, is rarely the forecasting model. It is creating a reliable path from scattered records to a consistent and inspectable dataset.</p>
+      <p>In developing the PGCB Power Data Visualizer, I treated collection, cleaning, visualization, and forecasting as one connected workflow. A polished chart built on inconsistent timestamps or silent missing values can communicate false confidence. Good presentation begins with explicit data handling.</p>
+      <h2>Context before prediction</h2>
+      <p>A useful dashboard should let a visitor understand recent history before presenting a forecast. Demand curves, fuel-mix changes, daily peaks, and gaps in the record all provide context. Forecasts become easier to judge when users can compare them with familiar patterns and recent deviations.</p>
+      <div class="pullquote">The goal of visualization is not to make uncertainty disappear. It is to make the evidence—and its limits—easier to inspect.</div>
+      <h2>Forecasts need honest baselines</h2>
+      <p>A 24-hour forecast should be compared with simple alternatives such as the previous day or a recent average. Evaluation should preserve time order and report performance across different periods, not only one favorable window. This keeps model complexity connected to measurable benefit.</p>
+      <p>Fuel-mix forecasting adds another layer: outputs are coupled because the components contribute to a total. A good interface can expose both the system-level curve and the contribution of each source without overwhelming the reader.</p>
+      <div class="note-box"><strong>Product principle:</strong> every transformation—from source record to displayed value—should be reproducible, and every model output should be visually distinguishable from observation.</div>
+      <h2>An open platform as a research tool</h2>
+      <p>Beyond public communication, an open data platform creates a foundation for experiments in anomaly detection, renewable forecasting, demand response, and planning. It also reveals the practical limits of available data, which can be as informative as a benchmark score.</p>
+      <p>For me, that is the most interesting outcome: a software project that makes the grid easier to see while creating better questions for future energy research.</p>
+    </div>
+    <a class="article-back" href="../index.html#notes">← Back to all research notes</a>
+  </main>
+  <footer><p>© <span data-year></span> Md Mahmud Akon</p><p>Power systems · Control · AI for energy</p><a href="#top">Back to top ↑</a></footer>
+  <script src="../script.js"></script>
+</body>
+</html>

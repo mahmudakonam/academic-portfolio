@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical introduction to grid-forming inverters, virtual inertia, and real operating constraints.">
+  <title>What makes an inverter grid-forming? — Md Mahmud Akon</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css">
+</head>
+<body class="article-page">
+  <header class="site-header article-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">MA</span><span class="brand-copy"><strong>Md Mahmud Akon</strong><small>Research notes</small></span></a>
+    <nav class="primary-nav" aria-label="Article navigation"><a href="../index.html#research">Research</a><a href="../index.html#projects">Projects</a><a href="../index.html#notes">Notes</a></nav>
+    <a class="header-cta" href="../index.html#contact">Let’s connect ↗</a>
+  </header>
+  <main class="article-main">
+    <p class="article-kicker">Control · Research note 01</p>
+    <h1>What makes an inverter “grid-forming”?</h1>
+    <p class="article-deck">The label is not just about producing a voltage waveform. It describes how a converter establishes, regulates, and protects that waveform while interacting with the rest of the power system.</p>
+    <div class="article-byline"><span>By Md Mahmud Akon</span><span>6 min read · October 2026</span></div>
+    <div class="article-body">
+      <p>Traditional power systems were built around synchronous machines. Their rotating mass, electromagnetic coupling, and control systems naturally shaped grid frequency and voltage. As power systems add more converter-interfaced renewable generation, engineers need converters that can take on part of that organizing role.</p>
+      <p>A grid-following inverter measures an existing grid waveform and injects current relative to it. A grid-forming inverter instead behaves more like a controlled voltage source. It establishes an internal angle and voltage reference, then responds to the active- and reactive-power exchange at its terminals.</p>
+      <h2>Control law versus complete system</h2>
+      <p>Droop control, virtual synchronous generator control, and related approaches can all create grid-forming behavior. But the outer control law is only one layer. A usable design must coordinate inner current and voltage loops, filtering, energy-source dynamics, synchronization, and protection.</p>
+      <div class="pullquote">A controller is not truly useful because it looks stable in one plot. It is useful when it remains understandable and safe as the operating conditions change.</div>
+      <h2>The constraints are part of the dynamics</h2>
+      <p>Real converters have strict current limits. Batteries have state-of-charge, power, and energy constraints. During a large disturbance, a virtual inertia command may ask for more energy or current than the physical system can deliver. Simply clipping a reference can alter the intended dynamics and create unexpected interactions.</p>
+      <p>This is why supervisory coordination matters. A higher-level controller can adapt virtual inertia, damping, or power references according to battery state and converter headroom. The aim is to preserve a useful grid-forming response without pretending that the hardware has unlimited capacity.</p>
+      <div class="note-box"><strong>Research question:</strong> How should a supervisor balance frequency support, transient current, battery reserve, and recovery so that the response remains both effective and predictable?</div>
+      <h2>What “good” should mean</h2>
+      <p>A strong evaluation should go beyond nominal settling time. It should consider weak-grid conditions, impedance uncertainty, current saturation, energy recovery, disturbances, and controller comparisons made under equal tuning budgets. The most promising methods connect physical reasoning with optimization or learning while keeping safety constraints explicit.</p>
+      <p>That perspective motivates my current work on constraint-aware virtual synchronous generator supervision and trustworthy adaptation of grid-forming controllers.</p>
+    </div>
+    <a class="article-back" href="../index.html#notes">← Back to all research notes</a>
+  </main>
+  <footer><p>© <span data-year></span> Md Mahmud Akon</p><p>Power systems · Control · AI for energy</p><a href="#top">Back to top ↑</a></footer>
+  <script src="../script.js"></script>
+</body>
+</html>

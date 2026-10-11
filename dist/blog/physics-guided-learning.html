@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Why physical structure can make machine learning for energy systems more useful and interpretable.">
+  <title>Why physics-guided learning matters — Md Mahmud Akon</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css">
+</head>
+<body class="article-page">
+  <header class="site-header article-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">MA</span><span class="brand-copy"><strong>Md Mahmud Akon</strong><small>Research notes</small></span></a>
+    <nav class="primary-nav" aria-label="Article navigation"><a href="../index.html#research">Research</a><a href="../index.html#projects">Projects</a><a href="../index.html#notes">Notes</a></nav>
+    <a class="header-cta" href="../index.html#contact">Let’s connect ↗</a>
+  </header>
+  <main class="article-main">
+    <p class="article-kicker">AI for energy · Research note 02</p>
+    <h1>Why physics-guided learning matters</h1>
+    <p class="article-deck">Energy data are not arbitrary numbers. They come from systems with conservation laws, operating regions, constraints, and causal structure—and learning methods can benefit from respecting them.</p>
+    <div class="article-byline"><span>By Md Mahmud Akon</span><span>5 min read · October 2026</span></div>
+    <div class="article-body">
+      <p>Machine learning is attractive in energy research because modern grids, converters, batteries, and renewable systems generate large and complex datasets. Yet a model that performs well on familiar data may behave poorly under a new operating condition. In engineering, that gap can matter more than a small gain in average accuracy.</p>
+      <p>Physics-guided learning introduces known structure into the learning process. The guidance may appear in the model architecture, loss function, feature design, constraints, or training data. The objective is not to replace physics. It is to use physical knowledge where it is reliable and let data address what remains difficult to model.</p>
+      <h2>Structure can reduce ambiguity</h2>
+      <p>Consider a photovoltaic current–voltage curve. Different regions of the curve carry different information about series resistance, shunt resistance, and other device parameters. A model that treats every point identically may miss that structure. Region-aware attention can encourage the model to focus on the parts of the curve that are physically informative for each parameter.</p>
+      <div class="pullquote">The most useful model is often not the one with the fewest assumptions—it is the one with the right assumptions made visible.</div>
+      <h2>Interpretability is an engineering feature</h2>
+      <p>Interpretability helps researchers check whether a model is using plausible evidence. If an estimator relies on a physically irrelevant region, the error may remain hidden until conditions change. Attention maps, sensitivity analysis, constrained outputs, and consistency checks can reveal these problems earlier.</p>
+      <p>Physics can also support data efficiency. Simulated scenarios, dimensional relationships, and known bounds reduce the number of behaviors a model must learn from scratch. This is especially valuable when measurements are expensive or rare operating conditions are underrepresented.</p>
+      <div class="note-box"><strong>Design principle:</strong> physical guidance should be specific enough to improve trust, but not so rigid that it forces the model to reproduce an incomplete or mismatched physical model.</div>
+      <h2>Where the idea goes next</h2>
+      <p>The same philosophy applies to controller tuning, renewable forecasting, battery estimation, and energy management. Data-driven methods can search complex spaces, while physical models and safety constraints define meaningful boundaries. The research challenge is to make that collaboration explicit, testable, and robust under uncertainty.</p>
+    </div>
+    <a class="article-back" href="../index.html#notes">← Back to all research notes</a>
+  </main>
+  <footer><p>© <span data-year></span> Md Mahmud Akon</p><p>Power systems · Control · AI for energy</p><a href="#top">Back to top ↑</a></footer>
+  <script src="../script.js"></script>
+</body>
+</html>
